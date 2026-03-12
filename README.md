@@ -1,226 +1,263 @@
+# 🕵️ Wireshark Network Traffic Analysis
 
-# Wireshark Network Traffic Analysis
+![Wireshark](https://img.shields.io/badge/Tool-Wireshark-blue)
+![Cybersecurity](https://img.shields.io/badge/Domain-Cybersecurity-red)
+![Network Analysis](https://img.shields.io/badge/Focus-Network%20Analysis-green)
+![Protocols](https://img.shields.io/badge/Protocols-DNS%20%7C%20TCP%20%7C%20HTTP%20%7C%20UDP-yellow)
 
-![Wireshark](https://img.shields.io/badge/tool-Wireshark-blue)
-![Network Analysis](https://img.shields.io/badge/focus-Network%20Analysis-green)
-![Cybersecurity](https://img.shields.io/badge/domain-Cybersecurity-red)
-
-## Project Overview
-
-This project demonstrates practical **network traffic analysis using Wireshark**.  
-Network packets were captured from a local machine and analyzed to understand the behavior of several core internet protocols.
-
-Protocols analyzed:
-
-- DNS
-- TCP
-- HTTP
-- ICMP
-- UDP
-
-The goal of the project is to demonstrate **packet inspection, protocol understanding, and network troubleshooting skills**.
+![GitHub stars](https://img.shields.io/github/stars/supnrm02-cmd/Wireshark-network-analysis)
+![GitHub forks](https://img.shields.io/github/forks/supnrm02-cmd/Wireshark-network-analysis)
+![GitHub last commit](https://img.shields.io/github/last-commit/supnrm02-cmd/Wireshark-network-analysis)
 
 ---
 
-## Skills Demonstrated
+# 📌 Overview
 
-- Packet capture and inspection using Wireshark
-- TCP/IP protocol analysis
-- DNS query and response investigation
-- TCP three‑way handshake analysis
-- HTTP request/response inspection
-- ICMP connectivity testing
-- UDP stream analysis
-- Packet filtering techniques
+This project demonstrates **network traffic analysis using Wireshark**.
 
----
+Captured packets were analyzed to understand how common internet protocols behave in real network traffic.
 
-## Network Traffic Analysis Workflow
+The investigation focuses on:
 
-1. **Traffic Capture**
-Captured live network packets using Wireshark during web browsing and ping tests.
+- DNS resolution
+- TCP connection establishment
+- HTTP web traffic
+- ICMP network diagnostics
+- UDP communication flows
 
-2. **Packet Filtering**
-Applied Wireshark display filters to isolate specific protocols.
-
-3. **Protocol Identification**
-Examined packet headers to identify communication patterns.
-
-4. **Session Analysis**
-Observed TCP handshakes and HTTP request‑response cycles.
-
-5. **Stream Reconstruction**
-Used Wireshark’s "Follow Stream" feature to reconstruct UDP communication.
-
-6. **Documentation**
-Captured screenshots and documented observations.
+This project highlights **core cybersecurity skills related to packet inspection and network troubleshooting**.
 
 ---
 
-# Protocol Analysis
+# 🧠 Skills Demonstrated
 
-## DNS Traffic
+This project demonstrates practical cybersecurity knowledge including:
 
-Filter used:
+- packet capture analysis
+- network protocol inspection
+- TCP/IP fundamentals
+- DNS investigation
+- HTTP traffic analysis
+- identifying security implications of network protocols
 
-```
-dns
-```
+---
 
-DNS packets show how domain names are translated into IP addresses.
+# 🔬 Protocols Analyzed
 
-Example DNS queries were observed for domains such as:
+| Protocol | Purpose |
+|--------|--------|
+| DNS | Domain name resolution |
+| TCP | Reliable connection-based communication |
+| HTTP | Web traffic communication |
+| ICMP | Network diagnostics |
+| UDP | Connectionless communication |
 
-- openai.com
-- google services domains
+---
 
-Screenshot:
+# 📷 Packet Capture Screenshots
+
+Below are examples of captured network traffic analyzed during the investigation.
+
+---
+
+# 🌐 DNS Query Analysis
+
+DNS packets translate domain names into IP addresses.
 
 ![DNS Query](Screenshots/dns-query.png)
 
-Additional capture:
+Security note:
+
+DNS queries are **unencrypted by default**, meaning browsing activity may be visible on the network.
+
+---
+
+# 🌐 DNS Packet Capture
+
+Detailed DNS packet inspection captured in Wireshark.
 
 ![DNS Capture](Screenshots/dns-capture.png)
 
-Key observations:
-
-- DNS requests sent to public resolver (e.g. 8.8.8.8)
-- Both A and AAAA records may be returned
-- DNS typically precedes HTTP communication
-
 ---
 
-## TCP Three‑Way Handshake
+# 🔗 TCP Three-Way Handshake
 
-Filter:
+TCP establishes reliable connections using the **three-way handshake**:
 
-```
-tcp.flags.syn == 1
-```
+1. SYN  
+2. SYN-ACK  
+3. ACK  
 
-The TCP connection process:
-
-1 SYN  
-2 SYN‑ACK  
-3 ACK  
-
-Screenshot:
+This ensures both the client and server are ready before data transmission begins.
 
 ![TCP Handshake](Screenshots/tcp-handshake.png)
 
-Key observations:
-
-- Reliable connection establishment
-- Sequence numbers used to track packet order
-
 ---
 
-## HTTP Traffic (Port 80)
+# 🌍 HTTP Traffic Analysis
 
-Filter:
+HTTP traffic captured over **port 80** showing client-server communication.
 
-```
-tcp.port == 80
-```
-
-HTTP requests and responses were captured between client and server.
-
-Screenshots:
-
-![HTTP Traffic](Screenshots/http-traffic.png)
-
-![HTTP Traffic](Screenshots/http-traffic-alt.png)
-
-Example response observed:
+Example server response:
 
 ```
 HTTP/1.1 200 OK
+Server: Apache
+Content-Type: text/html
 ```
 
-This confirms successful web server communication.
+![HTTP Traffic](Screenshots/http-traffic.png)
+
+Security note:
+
+HTTP traffic is **plaintext**, meaning attackers could intercept transmitted data.
 
 ---
 
-## UDP Stream
+# 🌍 HTTP Traffic Alternate View
 
-Filter:
+Additional HTTP traffic observed during packet inspection.
 
-```
-udp
-```
-
-UDP communication was examined using **Follow UDP Stream**.
-
-Screenshot:
-
-![UDP Stream](Screenshots/udp-stream.png)
-
-Key observations:
-
-- UDP is connectionless
-- No handshake or retransmission
+![HTTP Traffic Alt](Screenshots/http-traffic-alt.png)
 
 ---
 
-## ICMP (Ping)
+# 📡 ICMP Network Diagnostic Traffic
 
-Filter:
+ICMP packets are used for network diagnostic tools such as **ping**.
 
-```
-icmp
-```
+Captured traffic includes:
 
-ICMP packets were captured during a ping test.
-
-Screenshot:
+- ICMP Echo Request
+- ICMP Echo Reply
 
 ![ICMP Ping](Screenshots/icmp-ping.png)
 
-Key observations:
-
-- Echo Request sent from client
-- Echo Reply returned from destination host
-- Used for connectivity diagnostics
+These packets help verify network connectivity.
 
 ---
 
-## Additional UDP Flow
+# 📨 UDP Stream
+
+UDP communication captured during packet analysis.
+
+![UDP Stream](Screenshots/udp-stream.png)
+
+Unlike TCP, UDP does not guarantee:
+
+- packet delivery
+- packet ordering
+- retransmission
+
+This makes UDP faster but less reliable.
+
+---
+
+# 🔁 UDP Flow
+
+Example UDP packet flow captured in Wireshark.
 
 ![UDP Flow](Screenshots/udp-flow.jpg)
 
----
+UDP is commonly used by:
 
-# Security Insights
-
-Several observations relevant to cybersecurity:
-
-- **DNS traffic is unencrypted**, which can expose browsing activity.
-- **HTTP traffic on port 80 is plaintext**, meaning contents could be intercepted.
-- **ICMP traffic can be used for reconnaissance** during network scanning.
-- **UDP traffic lacks reliability and verification**, which can be abused for amplification attacks.
+- DNS
+- streaming services
+- real-time communications
 
 ---
 
-# Additional Documentation
+# 🔐 Security Insights
 
-More detailed technical documentation:
+Several observations relevant to cybersecurity were identified:
 
-- `analysis/protocol_findings.md`
-- `filters/wireshark_filters.md`
+• DNS traffic exposes domain queries in plaintext  
+• HTTP traffic can reveal sensitive data if not encrypted  
+• ICMP traffic can reveal network topology during scanning  
+• UDP traffic can be abused in amplification attacks  
 
----
-
-# Future Improvements
-
-Possible next steps:
-
-- TLS / HTTPS traffic analysis
-- Packet timing and latency analysis
-- Suspicious traffic detection
-- Malware traffic pattern identification
+Understanding these behaviors is essential for **network defense and threat detection**.
 
 ---
 
-# Portfolio Summary
+# 📂 Project Structure
 
-This project demonstrates practical experience with **network packet capture, protocol inspection, and traffic analysis using Wireshark**, showcasing skills relevant to cybersecurity and network engineering roles.
+```
+Wireshark-network-analysis
+│
+├── Screenshots
+│   ├── dns-capture.png
+│   ├── dns-query.png
+│   ├── http-traffic.png
+│   ├── http-traffic-alt.png
+│   ├── icmp-ping.png
+│   ├── tcp-handshake.png
+│   ├── udp-flow.jpg
+│   └── udp-stream.png
+│
+├── analysis
+│   └── protocol_findings.md
+│
+├── filters
+│   └── wireshark_filters.md
+│
+└── README.md
+```
+
+---
+
+# 🧰 Tools Used
+
+- **Wireshark**
+- Packet capture filters
+- Display filters
+- TCP/IP protocol analysis
+
+---
+
+# 🚀 How to Reproduce the Analysis
+
+1. Install **Wireshark**
+2. Start a network capture
+3. Generate network traffic (open websites, ping hosts, etc.)
+4. Apply display filters such as:
+
+```
+dns
+tcp
+http
+icmp
+udp
+```
+
+5. Inspect packet details and protocol layers.
+
+---
+
+## 📖 Additional Documentation
+
+More detailed technical documentation is available here:
+
+- 📊 [Protocol Findings](analysis/protocol_findings.md)
+- 🔎 [Wireshark Filters Reference](filters/wireshark_filters.md)
+
+---
+
+# ⚠️ Disclaimer
+
+This project is intended for **educational purposes only**.
+
+Captured traffic should only be analyzed on networks where you have **authorization**.
+
+---
+
+# ⭐ Portfolio Note
+
+This project demonstrates foundational **cybersecurity and network analysis skills**, including:
+
+- packet inspection
+- protocol analysis
+- network troubleshooting
+- identifying potential security risks
+
+---
