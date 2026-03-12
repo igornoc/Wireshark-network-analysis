@@ -5,9 +5,9 @@
 ![Network Analysis](https://img.shields.io/badge/Focus-Network%20Analysis-green)
 ![Protocols](https://img.shields.io/badge/Protocols-DNS%20%7C%20TCP%20%7C%20HTTP%20%7C%20UDP-yellow)
 
-![GitHub stars](https://img.shields.io/github/stars/supnrm02-cmd/Wireshark-network-analysis)
-![GitHub forks](https://img.shields.io/github/forks/supnrm02-cmd/Wireshark-network-analysis)
-![GitHub last commit](https://img.shields.io/github/last-commit/supnrm02-cmd/Wireshark-network-analysis)
+![GitHub stars](https://img.shields.io/github/stars/igornoc/Wireshark-network-analysis)
+![GitHub forks](https://img.shields.io/github/forks/igornoc/Wireshark-network-analysis)
+![GitHub last commit](https://img.shields.io/github/last-commit/igornoc/Wireshark-network-analysis)
 
 ---
 
